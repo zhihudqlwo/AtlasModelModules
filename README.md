@@ -393,4 +393,3 @@ This mirror maintains model implementations and the existing README record of ou
 ## License
 
 The source licenses are retained at the repository root.
-- [ ] **zz_control/extra.py:1** - control extra row
