@@ -4,7 +4,7 @@ This mirror maintains model implementations and the existing README record of ou
 
 ### 📝 Complete TODO List
 
-- [ ] **src/transformers/models/audioflamingo3/modeling_audioflamingo3.py:124** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/audioflamingo3/modeling_audioflamingo3.py:124** - control reworded text
 - [ ] **src/transformers/models/auto/auto_factory.py:244** - # TODO: Validate that copying the parent quantization config to the text sub-config preserves
 - [ ] **src/transformers/models/auto/auto_factory.py:402** - # TODO: Validate that copying the parent quantization config to the text sub-config preserves
 - [ ] **src/transformers/models/bark/modeling_bark.py:186** - # TODO: Should be removed once Flash Attention for RoCm is bumped to 2.1.
@@ -388,6 +388,7 @@ This mirror maintains model implementations and the existing README record of ou
 - [ ] **src/transformers/models/yolos/modeling_yolos.py:340** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViT->Yolos
 - [ ] **src/transformers/models/yolos/modeling_yolos.py:356** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViT->Yolos
 - [ ] **src/transformers/models/yolos/modeling_yolos.py:370** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTLayer with ViT->Yolos,VIT->YOLOS
+- [ ] **src/transformers/models/zoedepth/image_processing_pil_zoedepth.py:170** - # TODO support align_corners=True in image_transforms.resize
 
 ## License
 
