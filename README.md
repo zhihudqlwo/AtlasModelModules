@@ -1,0 +1,394 @@
+# AtlasModelModules
+
+This mirror maintains model implementations and the existing README record of outstanding source work.
+
+### 📝 Complete TODO List
+
+- [ ] **src/transformers/models/audioflamingo3/modeling_audioflamingo3.py:124** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/auto/auto_factory.py:243** - # TODO: Validate that copying the parent quantization config to the text sub-config preserves
+- [ ] **src/transformers/models/auto/auto_factory.py:400** - # TODO: Validate that copying the parent quantization config to the text sub-config preserves
+- [ ] **src/transformers/models/bark/modeling_bark.py:186** - # TODO: Should be removed once Flash Attention for RoCm is bumped to 2.1.
+- [ ] **src/transformers/models/bark/modeling_bark.py:1414** - # TODO (joao):workaround until nested generation config is compatible with PreTrained Model
+- [ ] **src/transformers/models/bark/modeling_bark.py:1415** - # todo: dict
+- [ ] **src/transformers/models/bart/modeling_bart.py:191** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/bertweet/tokenization_bertweet.py:400** - # ToDo: Update with http://en.wikipedia.org/wiki/List_of_emoticons ?
+- [ ] **src/transformers/models/bigbird_pegasus/modeling_bigbird_pegasus.py:1182** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/biogpt/modeling_biogpt.py:168** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/blenderbot/modeling_blenderbot.py:177** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/blenderbot_small/modeling_blenderbot_small.py:164** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/blip/modeling_blip.py:775** - # TODO @arthurzucker check why we need this when for other models, their subPreTrainedModel handle it themselves.
+- [ ] **src/transformers/models/bridgetower/configuration_bridgetower.py:148** - # TODO: remove this once the Hub files are updated.
+- [ ] **src/transformers/models/byt5/tokenization_byt5.py:95** - # TODO extra ids are not used :sweatywmile:
+- [ ] **src/transformers/models/canine/modeling_canine.py:273** - # TODO add support for MLM
+- [ ] **src/transformers/models/clap/modeling_clap.py:322** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfAttention with Swin->ClapAudio
+- [ ] **src/transformers/models/clap/modeling_clap.py:416** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfOutput with Swin->ClapAudio
+- [ ] **src/transformers/models/clap/modeling_clap.py:430** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinAttention with Swin->ClapAudio
+- [ ] **src/transformers/models/clap/modeling_clap.py:449** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinIntermediate with Swin->ClapAudio
+- [ ] **src/transformers/models/clap/modeling_clap.py:465** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinOutput with Swin->ClapAudio
+- [ ] **src/transformers/models/clap/modeling_clap.py:503** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinLayer with Swin->ClapAudio
+- [ ] **src/transformers/models/clap/modeling_clap.py:623** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinStage with Swin->ClapAudio
+- [ ] **src/transformers/models/codegen/modeling_codegen.py:151** - # TODO(enijkamp): factor out number of logical TPU-v4 cores or make forward pass agnostic
+- [ ] **src/transformers/models/cohere_asr/feature_extraction_cohere_asr.py:105** - # TODO: @eustlb, for now we use librosa to compute the mel filters
+- [ ] **src/transformers/models/cohere_asr/modeling_cohere_asr.py:309** - # TODO arthur, how do we separate when it cross / self coming from different layer?
+- [ ] **src/transformers/models/csm/generation_csm.py:261** - # TODO (joao): this OP throws "skipping cudagraphs due to ['incompatible ops']", find solution
+- [ ] **src/transformers/models/csm/generation_csm.py:468** - # TODO: @eustlb, this should be batched !!!
+- [ ] **src/transformers/models/csm/modeling_csm.py:840** - # TODO: @eustlb, this should be batched !!!
+- [ ] **src/transformers/models/csm/modular_csm.py:509** - # TODO: @eustlb, this should be batched !!!
+- [ ] **src/transformers/models/csm/processing_csm.py:141** - # TODO: @eustlb, this should be in AudioProcessor
+- [ ] **src/transformers/models/d_fine/configuration_d_fine.py:28** - # TODO: Attribute map assignment logic should be fixed in modular
+- [ ] **src/transformers/models/d_fine/modular_d_fine.py:52** - # TODO: Attribute map assignment logic should be fixed in modular
+- [ ] **src/transformers/models/dab_detr/modeling_dab_detr.py:265** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrConvModel with Detr->DabDetr
+- [ ] **src/transformers/models/dab_detr/modeling_dab_detr.py:1380** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrMHAttentionMap with Detr->DabDetr
+- [ ] **src/transformers/models/data2vec/convert_data2vec_audio_original_pytorch_checkpoint_to_pytorch.py:131** - # TODO: don't match quantizer.weight_proj
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_audio.py:246** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:59** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitEmbeddings with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:155** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitPatchEmbeddings with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:194** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitSelfAttention with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:268** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitSdpaSelfAttention with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:320** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitSelfOutput with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:372** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitIntermediate with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:389** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitOutput with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:428** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitLayer with Beit->Data2VecVision,BEiT->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:494** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitRelativePositionBias with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:579** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitEncoder with Beit->Data2VecVision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:653** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitPreTrainedModel with Beit->Data2VecVision,beit->data2vec_vision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:683** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitModel with BEIT->DATA2VEC_VISION,Beit->Data2VecVision,True->False
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:774** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitForImageClassification with BEIT->DATA2VEC_VISION,Beit->Data2VecVision,beit->data2vec_vision
+- [ ] **src/transformers/models/data2vec/modeling_data2vec_vision.py:1057** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.beit.modeling_beit.BeitForSemanticSegmentation with BEIT->DATA2VEC_VISION,Beit->Data2VecVision,microsoft/beit-base-finetuned-ade-640-640->facebook/data2vec-vision-base,beit->data2vec_vision
+- [ ] **src/transformers/models/deformable_detr/modeling_deformable_detr.py:985** - # TODO: valid_ratios could be useless here. check https://github.com/fundamentalvision/Deformable-DETR/issues/36
+- [ ] **src/transformers/models/deformable_detr/modular_deformable_detr.py:834** - # TODO: valid_ratios could be useless here. check https://github.com/fundamentalvision/Deformable-DETR/issues/36
+- [ ] **src/transformers/models/deimv2/configuration_deimv2.py:29** - # TODO: Attribute map assignment logic should be fixed in modular
+- [ ] **src/transformers/models/deimv2/modeling_deimv2.py:1845** - # TODO: pass pixel_mask to backbone once DINOv3 supports it
+- [ ] **src/transformers/models/deimv2/modular_deimv2.py:728** - # TODO: pass pixel_mask to backbone once DINOv3 supports it
+- [ ] **src/transformers/models/dia/configuration_dia.py:135** - # TODO: Remove token ID forwarding once the `nari-labs/Dia-1.6B` checkpoint is updated
+- [ ] **src/transformers/models/dia/processing_dia.py:113** - # TODO: dac with batching is currently broken, but non-batch is working
+- [ ] **src/transformers/models/dia/processing_dia.py:308** - # TODO: see above, dac doesn't work in batches yet
+- [ ] **src/transformers/models/dia/processing_dia.py:362** - # TODO: @eustlb, this should be in AudioProcessor
+- [ ] **src/transformers/models/diffusion_gemma/convert_diffusion_gemma_weights.py:389** - # TODO(philculliton):Direct handling for unstacked checkpoint type, needs to be merged to allow for unified tensor handling
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:54** - # TODO(joaogante): block audio and video tokens from gemma4 from being sampled? (some logits processor)
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:116** - # TODO(joao): test other common `GenerationConfig` flags like top-k, and whitelist them.
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:864** - # TODO(joao, raushan): refactor `GenerationMixin` and this to reuse logic without requiring inheritance.
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:886** - # TODO(joao, raushan): refactor `GenerationMixin` and this to reuse logic without requiring inheritance.
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:905** - # TODO(joao, raushan): refactor `GenerationMixin` and this to reuse logic without requiring inheritance.
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:1137** - # TODO(joao, raushan): refactor `GenerationMixin` and this to reuse logic without requiring inheritance.
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:1168** - # TODO(joao, raushan): refactor `GenerationMixin` and this to reuse logic without requiring inheritance.
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:1194** - # TODO(joao, raushan): refactor `GenerationMixin` and this to reuse logic without requiring inheritance.
+- [ ] **src/transformers/models/diffusion_gemma/generation_diffusion_gemma.py:1289** - # TODO(joao, raushan): refactor `GenerationMixin` and this to reuse logic without requiring inheritance.
+- [ ] **src/transformers/models/diffusion_gemma/modeling_diffusion_gemma.py:1171** - # TODO(joao): this fn exists in a gemma4 class, but not in Gemma4Model. Move it there, and remove the modular
+- [ ] **src/transformers/models/diffusion_gemma/modular_diffusion_gemma.py:1001** - # TODO(joao): this fn exists in a gemma4 class, but not in Gemma4Model. Move it there, and remove the modular
+- [ ] **src/transformers/models/dinat/modeling_dinat.py:160** - # TODO: Support arbitrary patch sizes.
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:138** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinEmbeddings with Swin->DonutSwin
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:315** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfAttention with Swin->DonutSwin
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:409** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfOutput
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:423** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinAttention with Swin->DonutSwin
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:442** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinIntermediate
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:458** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinOutput
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:496** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinLayer with Swin->DonutSwin
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:617** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinStage with Swin->DonutSwin
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:673** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinEncoder with Swin->DonutSwin
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:761** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinPreTrainedModel with Swin->DonutSwin,swin->donut
+- [ ] **src/transformers/models/donut/modeling_donut_swin.py:880** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinForImageClassification with Swin->DonutSwin,swin->donut
+- [ ] **src/transformers/models/dpt/convert_dpt_beit_to_hf.py:247** - # TODO there's still a small difference with the original logits
+- [ ] **src/transformers/models/dpt/modeling_dpt.py:300** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->DPT
+- [ ] **src/transformers/models/dpt/modeling_dpt.py:356** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViTConfig->DPTConfig, ViTSelfOutput->DPTViTSelfOutput
+- [ ] **src/transformers/models/dpt/modeling_dpt.py:374** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViTConfig->DPTConfig, ViTSelfAttention->DPTSelfAttention, ViTSelfOutput->DPTViTSelfOutput
+- [ ] **src/transformers/models/dpt/modeling_dpt.py:391** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViTConfig->DPTConfig, ViTIntermediate->DPTViTIntermediate
+- [ ] **src/transformers/models/dpt/modeling_dpt.py:407** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViTConfig->DPTConfig, ViTOutput->DPTViTOutput
+- [ ] **src/transformers/models/dpt/modeling_dpt.py:421** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTLayer with ViTConfig->DPTConfig, ViTAttention->DPTViTAttention, ViTIntermediate->DPTViTIntermediate, ViTOutput->DPTViTOutput, ViTLayer->DPTViTLayer
+- [ ] **src/transformers/models/dpt/modeling_dpt.py:804** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTPooler with ViTConfig->DPTConfig, ViTPooler->DPTViTPooler
+- [ ] **src/transformers/models/edgetam/modeling_edgetam.py:455** - # TODO: TimmWrapper models aren't compatible with _can_record_outputs yet. We specifically set this to
+- [ ] **src/transformers/models/edgetam/modular_edgetam.py:196** - # TODO: TimmWrapper models aren't compatible with _can_record_outputs yet. We specifically set this to
+- [ ] **src/transformers/models/edgetam_video/modular_edgetam_video.py:1469** - # Todo, implement batch memory encoding for edgetam video
+- [ ] **src/transformers/models/esm/modeling_esmfold.py:1951** - # TODO Add information to the docstring about any methods that convert to PDB format, or otherwise prepare
+- [ ] **src/transformers/models/esm/openfold_utils/residue_constants.py:364** - # TODO: ^ interpret this
+- [ ] **src/transformers/models/esm/openfold_utils/residue_constants.py:416** - # TODO: this file should be downloaded in a setup script
+- [ ] **src/transformers/models/esm/tokenization_esm.py:63** - # TODO, all the tokens are added? But they are also part of the vocab... bit strange.
+- [ ] **src/transformers/models/falcon/modeling_falcon.py:435** - # TODO: Should be removed once Flash Attention for RoCm is bumped to 2.1.
+- [ ] **src/transformers/models/falcon/modeling_falcon.py:470** - # TODO: These transpose are quite inefficient but Flash Attention requires the layout [batch_size, sequence_length, num_heads, head_dim]. We would need to refactor the KV cache
+- [ ] **src/transformers/models/flava/modeling_flava.py:526** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP.forward
+- [ ] **src/transformers/models/flava/modeling_flava.py:540** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP.forward
+- [ ] **src/transformers/models/flava/modeling_flava.py:561** - # TODO: Check fp32 layer norm possibility
+- [ ] **src/transformers/models/fsmt/modeling_fsmt.py:97** - # TODO:
+- [ ] **src/transformers/models/fsmt/modeling_fsmt.py:1017** - # TODO(SS): do we need to ignore pad tokens in labels?
+- [ ] **src/transformers/models/gemma3/convert_gemma3_weights.py:698** - # TODO: Support Retrieval tasks where we use `"title: {title} | text: {passage}"` internally and construct this
+- [ ] **src/transformers/models/gemma3n/convert_gemma3n_weights.py:489** - # TODO: ryanmullins - support multimodal norms and projections
+- [ ] **src/transformers/models/gemma3n/feature_extraction_gemma3n.py:264** - # TODO: The filtered mask is always exactly 3 elements longer than the mel_spectrogram. Why???
+- [ ] **src/transformers/models/gemma4/convert_gemma4_weights.py:637** - # TODO(philculliton): These do not appear to be used currently - they should be loaded by Gemma4VisionPatchEmbedder, by all appearances, but are not currently.
+- [ ] **src/transformers/models/gemma4/convert_gemma4_weights.py:1114** - # TODO(philculliton):Direct handling for unstacked checkpoint type, needs to be merged to allow for unified tensor handling
+- [ ] **src/transformers/models/gemma4/modeling_gemma4.py:450** - # TODO: this could be imported from Voxtral realtime
+- [ ] **src/transformers/models/gemma4/modeling_gemma4.py:473** - # padding_cache: VoxtralRealtimeConv1dPaddingCache | None = None,  # TODO: we might want to add a cache?
+- [ ] **src/transformers/models/gemma4/modular_gemma4.py:482** - # TODO: this could be imported from Voxtral realtime
+- [ ] **src/transformers/models/gemma4/modular_gemma4.py:505** - # padding_cache: VoxtralRealtimeConv1dPaddingCache | None = None,  # TODO: we might want to add a cache?
+- [ ] **src/transformers/models/gemma4/processing_gemma4.py:193** - # TODO: Add tests for audio-only processor inputs.
+- [ ] **src/transformers/models/git/convert_git_to_pytorch.py:265** - # todo
+- [ ] **src/transformers/models/glm5_next/image_processing_glm5_next.py:71** - # TODO: possibly integrate directly into size dict (into the values)
+- [ ] **src/transformers/models/glm5_next/image_processing_glm5_next.py:127** - # TODO: Refactor afterwards to be included within
+- [ ] **src/transformers/models/glm5_next/image_processing_glm5_next.py:179** - # TODO: Also likely refactorable after min/max pixels has been added to size dict
+- [ ] **src/transformers/models/glm5_next/image_processing_glm5_next.py:221** - # TODO: Ignored for now, refactoring after min/max pixels PRs has been merged
+- [ ] **src/transformers/models/glm5_next/image_processing_pil_glm5_next.py:69** - # TODO: possibly integrate directly into size dict (into the values)
+- [ ] **src/transformers/models/glm5_next/image_processing_pil_glm5_next.py:125** - # TODO: Refactor afterwards to be included within
+- [ ] **src/transformers/models/glm5_next/image_processing_pil_glm5_next.py:177** - # TODO: Also likely refactorable after min/max pixels has been added to size dict
+- [ ] **src/transformers/models/glm5_next/modeling_glm5_next.py:1368** - # TODO: this can be fixed but is limited by
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:1221** - # TODO: this can be fixed but is limited by
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:1715** - # TODO: possibly integrate directly into size dict (into the values)
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:1788** - # TODO: Refactor afterwards to be included within
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:1828** - # TODO: Also likely refactorable after min/max pixels has been added to size dict
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:1840** - # TODO: Ignored for now, refactoring after min/max pixels PRs has been merged
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:1942** - # TODO: Refactor afterwards to be included within
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:1982** - # TODO: Also likely refactorable after min/max pixels has been added to size dict
+- [ ] **src/transformers/models/glm5_next/modular_glm5_next.py:2294** - # TODO: Also likely refactorable after min/max pixels has been added to size dict
+- [ ] **src/transformers/models/glm5_next/video_processing_glm5_next.py:86** - # TODO: possibly integrate directly into size dict (into the values)
+- [ ] **src/transformers/models/glm5_next/video_processing_glm5_next.py:270** - # TODO: Also likely refactorable after min/max pixels has been added to size dict
+- [ ] **src/transformers/models/glmasr/modeling_glmasr.py:287** - # TODO: @eustlb, this is what WhisperEncoder should look like
+- [ ] **src/transformers/models/glmasr/modular_glmasr.py:286** - # TODO: @eustlb, this is what WhisperEncoder should look like
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:31** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerOverlapPatchEmbeddings
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:57** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerEfficientSelfAttention
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:137** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerSelfOutput
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:150** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerAttention with Segformer->GLPN
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:186** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerMixFFN with Segformer->GLPN
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:235** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerLayer with Segformer->GLPN
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:378** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerModel.__init__ with Segformer->GLPN
+- [ ] **src/transformers/models/glpn/modeling_glpn.py:390** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.segformer.modeling_segformer.SegformerModel.forward
+- [ ] **src/transformers/models/gpt_bigcode/modeling_gpt_bigcode.py:52** - # TODO: Could have better fused kernels depending on scaling and dropout.
+- [ ] **src/transformers/models/gpt_neo/modeling_gpt_neo.py:171** - # TODO: Should be removed once Flash Attention for RoCm is bumped to 2.1.
+- [ ] **src/transformers/models/gpt_neo/modeling_gpt_neo.py:361** - # TODO: needs a hybrid cache
+- [ ] **src/transformers/models/gpt_oss/convert_gpt_oss_weights_to_hf.py:395** - # TODO 1st download the vocabfile!!!
+- [ ] **src/transformers/models/gpt_sw3/tokenization_gpt_sw3.py:178** - # TODO: Check if this is needed, as it ensures that decode(encode(doc)) != doc by adding extra whitespace in the decoded document
+- [ ] **src/transformers/models/gptj/modeling_gptj.py:238** - # TODO: Should be removed once Flash Attention for RoCm is bumped to 2.1.
+- [ ] **src/transformers/models/granite_speech/feature_extraction_granite_speech.py:90** - # TODO (@alex-jw-brooks): Currently input_features_mask is not
+- [ ] **src/transformers/models/granite_speech/modeling_granite_speech.py:193** - # TODO (@avihu111) find a fast alternative to einsum
+- [ ] **src/transformers/models/granite_speech/modeling_granite_speech.py:537** - # TODO (@alex-jw-brooks) add an example to this docstring once models are released
+- [ ] **src/transformers/models/granite_speech_plus/modeling_granite_speech_plus.py:340** - # TODO (@avihu111) find a fast alternative to einsum
+- [ ] **src/transformers/models/granite_speech_plus/modeling_granite_speech_plus.py:558** - # TODO (@alex-jw-brooks) add an example to this docstring once models are released
+- [ ] **src/transformers/models/granitemoe_swa/modeling_granitemoe_swa.py:64** - # TODO: refactor older granitemoe models to enable EP as well and remove this override
+- [ ] **src/transformers/models/granitemoe_swa/modeling_granitemoe_swa.py:122** - # TODO: refactor older granitemoe models to enable EP as well and remove this override
+- [ ] **src/transformers/models/granitemoe_swa/modular_granitemoe_swa.py:129** - # TODO: refactor older granitemoe models to enable EP as well and remove this override
+- [ ] **src/transformers/models/granitemoe_swa/modular_granitemoe_swa.py:139** - # TODO: refactor older granitemoe models to enable EP as well and remove this override
+- [ ] **src/transformers/models/grounding_dino/modeling_grounding_dino.py:434** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrConvModel with Detr->GroundingDino
+- [ ] **src/transformers/models/grounding_dino/modeling_grounding_dino.py:1434** - # TODO: valid_ratios could be useless here. check https://github.com/fundamentalvision/Deformable-DETR/issues/36
+- [ ] **src/transformers/models/grounding_dino/processing_grounding_dino.py:219** - # TODO: @pavel, set labels to None since v4.51.0 or find a way to extract ids
+- [ ] **src/transformers/models/hgnet_v2/configuration_hgnet_v2.py:31** - # TODO: Modular conversion for resnet must be fixed as
+- [ ] **src/transformers/models/hgnet_v2/modular_hgnet_v2.py:39** - # TODO: Modular conversion for resnet must be fixed as
+- [ ] **src/transformers/models/higgs_audio_v2/generation_higgs_audio_v2.py:348** - # TODO (joao): this OP throws "skipping cudagraphs due to ['incompatible ops']", find solution
+- [ ] **src/transformers/models/higgs_audio_v2/processing_higgs_audio_v2.py:174** - # TODO: @eustlb, this should be batched !!!
+- [ ] **src/transformers/models/higgs_audio_v2/processing_higgs_audio_v2.py:177** - # TODO: @eustlb, padding_mask should be supported...
+- [ ] **src/transformers/models/higgs_audio_v2/processing_higgs_audio_v2.py:274** - # TODO: @eustlb, this should be batched !!!
+- [ ] **src/transformers/models/higgs_audio_v2/processing_higgs_audio_v2.py:331** - # TODO: @eustlb, this should be in AudioProcessor
+- [ ] **src/transformers/models/higgs_audio_v2/processing_higgs_audio_v2.py:362** - # TODO: @eustlb, to be standardized!!
+- [ ] **src/transformers/models/higgs_audio_v2_tokenizer/modeling_higgs_audio_v2_tokenizer.py:497** - # TODO: there is a diff here with original codebase https://github.com/boson-ai/higgs-audio/blob/f644b62b855ba2b938896436221e01efadcc76ca/boson_multimodal/audio_processing/higgs_audio_v2_tokenizer.py#L173-L174
+- [ ] **src/transformers/models/higgs_audio_v2_tokenizer/modular_higgs_audio_v2_tokenizer.py:123** - # TODO: there is a diff here with original codebase https://github.com/boson-ai/higgs-audio/blob/f644b62b855ba2b938896436221e01efadcc76ca/boson_multimodal/audio_processing/higgs_audio_v2_tokenizer.py#L173-L174
+- [ ] **src/transformers/models/hubert/modeling_hubert.py:305** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/idefics/modeling_idefics.py:1065** - # TODO(ls): Add cross attention values to respective lists
+- [ ] **src/transformers/models/informer/modeling_informer.py:337** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/instructblip/convert_instructblip_original_to_pytorch.py:264** - # TODO add this in the generate method?
+- [ ] **src/transformers/models/instructblip/modeling_instructblip.py:867** - # TODO @ArthurZucker I don't know why this is required for FP8
+- [ ] **src/transformers/models/instructblip/modeling_instructblip.py:1031** - # TODO @ArthurZucker I don't know why this is required for FP8
+- [ ] **src/transformers/models/instructblipvideo/convert_instructblipvideo_original_to_pytorch.py:266** - # TODO add this in the generate method?
+- [ ] **src/transformers/models/instructblipvideo/modeling_instructblipvideo.py:851** - # TODO @ArthurZucker I don't know why this is required for FP8
+- [ ] **src/transformers/models/instructblipvideo/modeling_instructblipvideo.py:1047** - # TODO @ArthurZucker I don't know why this is required for FP8
+- [ ] **src/transformers/models/janus/convert_janus_weights_to_hf.py:441** - # TODO: warning about weights not being tied is raised here regardless of model.tie_weights() above
+- [ ] **src/transformers/models/kimi_linear/modeling_kimi_linear.py:787** - # CODEPATH: TODO: remove this once the mlinter rule is relaxed
+- [ ] **src/transformers/models/kimi_linear/modular_kimi_linear.py:261** - # CODEPATH: TODO: remove this once the mlinter rule is relaxed
+- [ ] **src/transformers/models/kosmos2_5/modeling_kosmos2_5.py:388** - # TODO: check with krip
+- [ ] **src/transformers/models/kyutai_speech_to_text/modeling_kyutai_speech_to_text.py:509** - # TODO cyril: modular
+- [ ] **src/transformers/models/kyutai_speech_to_text/modeling_kyutai_speech_to_text.py:918** - # TODO: @eustlb, this should be standardized
+- [ ] **src/transformers/models/kyutai_speech_to_text/modeling_kyutai_speech_to_text.py:946** - # TODO: @eustlb, this should be standardized
+- [ ] **src/transformers/models/kyutai_speech_to_text/modeling_kyutai_speech_to_text.py:963** - # TODO: @eustlb, we should have per-batch-idx values
+- [ ] **src/transformers/models/kyutai_speech_to_text/modular_kyutai_speech_to_text.py:451** - # TODO: @eustlb, this should be standardized
+- [ ] **src/transformers/models/kyutai_speech_to_text/modular_kyutai_speech_to_text.py:479** - # TODO: @eustlb, this should be standardized
+- [ ] **src/transformers/models/kyutai_speech_to_text/modular_kyutai_speech_to_text.py:496** - # TODO: @eustlb, we should have per-batch-idx values
+- [ ] **src/transformers/models/lasr/feature_extraction_lasr.py:31** - # TODO: @eustlb, we should be able to remove this and use mel_filter_bank from audio_utils
+- [ ] **src/transformers/models/lasr/feature_extraction_lasr.py:128** - # TODO: @eustlb, to be standardized
+- [ ] **src/transformers/models/lasr/modeling_lasr.py:420** - # TODO: @eustlb, add support when flash attention supports custom attention bias
+- [ ] **src/transformers/models/led/modeling_led.py:254** - # TODO: remove the redundant computation
+- [ ] **src/transformers/models/led/modeling_led.py:368** - # TODO replace this with
+- [ ] **src/transformers/models/llama4/convert_llama4_weights_to_hf.py:475** - # TODO we need to do better than mean, works for now
+- [ ] **src/transformers/models/llama4/convert_llama4_weights_to_hf.py:526** - # TODO test if we can do `tp_plan="auto"``
+- [ ] **src/transformers/models/llama4/modeling_llama4.py:745** - # TODO there is a different RoPE for vision encoder, defined as below
+- [ ] **src/transformers/models/llama4/modeling_llama4.py:814** - # TODO Might be enforced here for TP compatibility as scaling is not just sqrt(head_dim)
+- [ ] **src/transformers/models/llama4/modeling_llama4.py:902** - # TODO move this to an attribute instead of keeping it around
+- [ ] **src/transformers/models/longcat_flash/modeling_longcat_flash.py:558** - # TODO let's make sure original code base has this, for now it fixes quantization
+- [ ] **src/transformers/models/longcat_flash/modular_longcat_flash.py:326** - # TODO let's make sure original code base has this, for now it fixes quantization
+- [ ] **src/transformers/models/longformer/modeling_longformer.py:610** - # TODO: remove the redundant computation
+- [ ] **src/transformers/models/longformer/modeling_longformer.py:724** - # TODO replace this with
+- [ ] **src/transformers/models/longt5/modeling_longt5.py:86** - # TODO: Update before the merge
+- [ ] **src/transformers/models/longt5/modeling_longt5.py:1162** - # TODO: @raushan more involved due to local/global attn
+- [ ] **src/transformers/models/m2m_100/modeling_m2m_100.py:260** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/marian/modeling_marian.py:184** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/maskformer/convert_maskformer_resnet_to_pytorch.py:41** - # TODO add support for ResNet-C backbone, which uses a "deeplab" stem
+- [ ] **src/transformers/models/maskformer/convert_maskformer_resnet_to_pytorch.py:64** - # TODO
+- [ ] **src/transformers/models/maskformer/convert_maskformer_swin_to_pytorch.py:59** - # TODO
+- [ ] **src/transformers/models/maskformer/modeling_maskformer_swin.py:266** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfAttention with Swin->MaskFormerSwin
+- [ ] **src/transformers/models/maskformer/modeling_maskformer_swin.py:360** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfOutput with Swin->MaskFormerSwin
+- [ ] **src/transformers/models/maskformer/modeling_maskformer_swin.py:374** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinAttention with Swin->MaskFormerSwin
+- [ ] **src/transformers/models/maskformer/modeling_maskformer_swin.py:393** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinIntermediate with Swin->MaskFormerSwin
+- [ ] **src/transformers/models/maskformer/modeling_maskformer_swin.py:409** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinOutput with Swin->MaskFormerSwin
+- [ ] **src/transformers/models/maskformer/modeling_maskformer_swin.py:553** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinStage.__init__ with Swin->MaskFormerSwin
+- [ ] **src/transformers/models/maskformer/modeling_maskformer_swin.py:606** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinEncoder.__init__ with Swin->MaskFormerSwin
+- [ ] **src/transformers/models/mbart/modeling_mbart.py:199** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/mimi/modeling_mimi.py:1244** - # TODO: @eustlb, let's make the encoder support padding_mask so that batched inputs are supported.
+- [ ] **src/transformers/models/mimi/modeling_mimi.py:1247** - # TODO: @eustlb, convert the padding mask to attention mask.
+- [ ] **src/transformers/models/mm_grounding_dino/modeling_mm_grounding_dino.py:657** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrConvModel with Detr->MMGroundingDino
+- [ ] **src/transformers/models/mm_grounding_dino/modeling_mm_grounding_dino.py:1106** - # TODO: valid_ratios could be useless here. check https://github.com/fundamentalvision/Deformable-DETR/issues/36
+- [ ] **src/transformers/models/moonshine/modeling_moonshine.py:498** - # TODO arthur, how do we separate when it cross / self coming from different layer?
+- [ ] **src/transformers/models/moonshine/modular_moonshine.py:397** - # TODO arthur, how do we separate when it cross / self coming from different layer?
+- [ ] **src/transformers/models/moonshine_streaming/modeling_moonshine_streaming.py:329** - # TODO arthur, how do we separate when it cross / self coming from different layer?
+- [ ] **src/transformers/models/moshi/modeling_moshi.py:506** - # TODO cyril: modular
+- [ ] **src/transformers/models/musicgen/modeling_musicgen.py:222** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/musicgen_melody/modeling_musicgen_melody.py:230** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/nemotron/convert_nemotron_nemo_to_hf.py:125** - # TODO
+- [ ] **src/transformers/models/nemotron/modeling_nemotron.py:455** - # TODO: re-enable check: Copied from transformers.models.llama.modeling_llama.LlamaForCausalLM with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
+- [ ] **src/transformers/models/nemotron3_5_asr/modeling_nemotron3_5_asr.py:83** - # TODO: @eustlb, add support when flash attention supports custom attention bias
+- [ ] **src/transformers/models/nemotron_asr_streaming/feature_extraction_nemotron_asr_streaming.py:88** - # TODO: @eustlb, for now we use librosa to compute the mel filters
+- [ ] **src/transformers/models/nemotron_asr_streaming/modeling_nemotron_asr_streaming.py:818** - # TODO: @eustlb, add support when flash attention supports custom attention bias
+- [ ] **src/transformers/models/nllb_moe/modeling_nllb_moe.py:651** - # TODO: If anyone is up to it to make sure tests pass etc
+- [ ] **src/transformers/models/nllb_moe/modeling_nllb_moe.py:1102** - # todo check in the config if router loss enables
+- [ ] **src/transformers/models/nougat/tokenization_nougat.py:577** - # TODO Come up with footnote formatting inside a table
+- [ ] **src/transformers/models/olmo/convert_olmo_weights_to_hf.py:101** - # TODO: Layernorm stuff
+- [ ] **src/transformers/models/olmo/convert_olmo_weights_to_hf.py:102** - # TODO: multi query attention
+- [ ] **src/transformers/models/olmo/convert_olmo_weights_to_hf.py:130** - # TODO: Deal with weight-tying
+- [ ] **src/transformers/models/olmo2/convert_olmo2_weights_to_hf.py:116** - # TODO: Layernorm stuff
+- [ ] **src/transformers/models/olmo2/convert_olmo2_weights_to_hf.py:117** - # TODO: multi query attention
+- [ ] **src/transformers/models/olmo2/convert_olmo2_weights_to_hf.py:153** - # TODO: Deal with weight-tying
+- [ ] **src/transformers/models/olmo3/convert_olmo3_weights_to_hf.py:360** - # TODO: Deal with weight-tying
+- [ ] **src/transformers/models/omdet_turbo/modeling_omdet_turbo.py:1341** - # todo add denoising for training
+- [ ] **src/transformers/models/paligemma/convert_paligemma2_weights_to_hf.py:41** - # TODO add sequence length variations here
+- [ ] **src/transformers/models/paligemma/convert_paligemma2_weights_to_hf.py:206** - # TODO verify correctness of layer norm loading
+- [ ] **src/transformers/models/paligemma/convert_paligemma_weights_to_hf.py:40** - # TODO add sequence length variations here
+- [ ] **src/transformers/models/paligemma/convert_paligemma_weights_to_hf.py:163** - # TODO verify correctness of layer norm loading
+- [ ] **src/transformers/models/parakeet/feature_extraction_parakeet.py:85** - # TODO: @eustlb, for now we use librosa to compute the mel filters
+- [ ] **src/transformers/models/parakeet/generation_parakeet.py:251** - # TODO @eustlb: this is temporary — we're going to modularize generate to allow doing this cleanly.
+- [ ] **src/transformers/models/parakeet/modeling_parakeet.py:490** - # TODO: @eustlb, add support when flash attention supports custom attention bias
+- [ ] **src/transformers/models/parakeet/modular_parakeet.py:339** - # TODO: @eustlb, add support when flash attention supports custom attention bias
+- [ ] **src/transformers/models/patchtsmixer/modeling_patchtsmixer.py:310** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/patchtst/modeling_patchtst.py:108** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/pe_audio/modeling_pe_audio.py:283** - # TODO: any reason why we take padding_mask[0] and not just 1?
+- [ ] **src/transformers/models/pe_audio/modeling_pe_audio.py:683** - # TODO: not sure about the typing for text_model_output
+- [ ] **src/transformers/models/pe_audio/modeling_pe_audio.py:736** - # TODO: naming can be improved here...
+- [ ] **src/transformers/models/pe_audio/modeling_pe_audio.py:807** - # TODO: underline in documentation that logits output shape is
+- [ ] **src/transformers/models/pe_audio/modular_pe_audio.py:115** - # TODO: add the capture of codec features?
+- [ ] **src/transformers/models/pe_audio/modular_pe_audio.py:172** - # TODO: not sure about the typing for text_model_output
+- [ ] **src/transformers/models/pe_audio/modular_pe_audio.py:225** - # TODO: naming can be improved here...
+- [ ] **src/transformers/models/pe_audio/modular_pe_audio.py:296** - # TODO: underline in documentation that logits output shape is
+- [ ] **src/transformers/models/pe_audio_video/modeling_pe_audio_video.py:130** - # TODO: any reason why we take padding_mask[0] and not just 1?
+- [ ] **src/transformers/models/pe_audio_video/modeling_pe_audio_video.py:715** - # TODO: update types to the correct ones
+- [ ] **src/transformers/models/pe_audio_video/modular_pe_audio_video.py:119** - # TODO: any reason why we take padding_mask[0] and not just 1?
+- [ ] **src/transformers/models/pe_audio_video/modular_pe_audio_video.py:517** - # TODO: update types to the correct ones
+- [ ] **src/transformers/models/pe_video/modeling_pe_video.py:46** - # TODO: not sure about the typing for text_model_output
+- [ ] **src/transformers/models/pe_video/modeling_pe_video.py:181** - # TODO: any reason why we take padding_mask[0] and not just 1?
+- [ ] **src/transformers/models/pe_video/modular_pe_video.py:37** - # TODO: not sure about the typing for text_model_output
+- [ ] **src/transformers/models/pegasus/modeling_pegasus.py:186** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/pegasus_x/modeling_pegasus_x.py:202** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/perceiver/tokenization_perceiver.py:179** - # TODO @ArthurZ refactor this as well....
+- [ ] **src/transformers/models/phi4_multimodal/feature_extraction_phi4_multimodal.py:202** - # TODO; @eustlb, move this to audio_utils in a general spectogram_batch function that handles torch and numpy
+- [ ] **src/transformers/models/plbart/modeling_plbart.py:193** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/pp_formulanet/modeling_pp_formulanet.py:608** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/qwen2_5_omni/modeling_qwen2_5_omni.py:3752** - # TODO: raushan, defaults should be saved in generation config
+- [ ] **src/transformers/models/qwen2_5_omni/modular_qwen2_5_omni.py:3616** - # TODO: raushan, defaults should be saved in generation config
+- [ ] **src/transformers/models/qwen3_omni_moe/modeling_qwen3_omni_moe.py:3138** - # TODO: hack here to take residual codes out, need refactor.
+- [ ] **src/transformers/models/qwen3_omni_moe/modeling_qwen3_omni_moe.py:3320** - # TODO(raushan, gante): Refactor this part to a utility function
+- [ ] **src/transformers/models/qwen3_omni_moe/modular_qwen3_omni_moe.py:1939** - # TODO: hack here to take residual codes out, need refactor.
+- [ ] **src/transformers/models/qwen3_omni_moe/modular_qwen3_omni_moe.py:1978** - # TODO(raushan, gante): Refactor this part to a utility function
+- [ ] **src/transformers/models/rag/modeling_rag.py:1607** - # because RAG expands input for doc-size internally. TODO: raushan, remove me when all models support
+- [ ] **src/transformers/models/rag/retrieval_rag.py:508** - # TODO(Patrick): if we train more RAG models, I want to put the input first to take advantage of effortless truncation
+- [ ] **src/transformers/models/rag/retrieval_rag.py:509** - # TODO(piktus): better handling of truncation
+- [ ] **src/transformers/models/recurrent_gemma/modeling_recurrent_gemma.py:338** - # `sqrt` in order to prevent NaNs during training in bfloat16. TODO a bit annoying
+- [ ] **src/transformers/models/recurrent_gemma/modeling_recurrent_gemma.py:352** - # TODO refactor
+- [ ] **src/transformers/models/recurrent_gemma/modeling_recurrent_gemma.py:689** - # TODO: re-enable check: Copied from transformers.models.llama.modeling_llama.LlamaForCausalLM with LLAMA->RECURRENTGEMMA,Llama->RecurrentGemma,llama->gemma
+- [ ] **src/transformers/models/rt_detr_v2/convert_rt_detr_v2_weights_to_hf.py:61** - # TODO: check this not working
+- [ ] **src/transformers/models/rwkv/modeling_rwkv.py:247** - # TODO: maybe jit, otherwise move inside forward
+- [ ] **src/transformers/models/sam2/image_processing_sam2.py:635** - # TODO: add connected components kernel for postprocessing
+- [ ] **src/transformers/models/sam2/modular_sam2.py:243** - # TODO: add connected components kernel for postprocessing
+- [ ] **src/transformers/models/sam2_video/modeling_sam2_video.py:832** - # TODO: This leads to ~1e-07 max diff and ~1e-09 avg diff for q_embed and k_embed from the original implementation, most likely due to the use of complex tensors in the original implementation.
+- [ ] **src/transformers/models/sam2_video/modular_sam2_video.py:1003** - # TODO: This leads to ~1e-07 max diff and ~1e-09 avg diff for q_embed and k_embed from the original implementation, most likely due to the use of complex tensors in the original implementation.
+- [ ] **src/transformers/models/sam3/image_processing_sam3.py:666** - # TODO: add connected components kernel for postprocessing
+- [ ] **src/transformers/models/sam3/modeling_sam3.py:1504** - # TODO: See if we can remove that reshaping and just use the features as is.
+- [ ] **src/transformers/models/sam3_lite_text/modeling_sam3_lite_text.py:1224** - # TODO: See if we can remove that reshaping and just use the features as is.
+- [ ] **src/transformers/models/sam3_tracker_video/modeling_sam3_tracker_video.py:834** - # TODO: This leads to ~1e-07 max diff and ~1e-09 avg diff for q_embed and k_embed from the original implementation, most likely due to the use of complex tensors in the original implementation.
+- [ ] **src/transformers/models/sew/modeling_sew.py:303** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/sew_d/modeling_sew_d.py:558** - # TODO: We should check if the opset_version being used to export
+- [ ] **src/transformers/models/shieldgemma2/processing_shieldgemma2.py:151** - # TODO(ryanmullins): Support images from PIL or URLs.
+- [ ] **src/transformers/models/siglip2/convert_siglip2_to_hf.py:388** - # TODO: update with more checkpoints
+- [ ] **src/transformers/models/speech_to_text/modeling_speech_to_text.py:245** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/speech_to_text/modeling_speech_to_text.py:372** - # TODO: change copy when applying cache class
+- [ ] **src/transformers/models/speech_to_text/modeling_speech_to_text.py:474** - # TODO: tests would need a rewrite to check for correct implementation
+- [ ] **src/transformers/models/swin2sr/convert_swin2sr_original_to_pytorch.py:211** - # TODO values didn't match exactly here
+- [ ] **src/transformers/models/swin2sr/modeling_swin2sr.py:334** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfOutput with Swin->Swin2SR
+- [ ] **src/transformers/models/swin2sr/modeling_swin2sr.py:375** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinIntermediate with Swin->Swin2SR
+- [ ] **src/transformers/models/swin2sr/modeling_swin2sr.py:391** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinOutput with Swin->Swin2SR
+- [ ] **src/transformers/models/swinv2/modeling_swinv2.py:169** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinEmbeddings with Swin->Swinv2
+- [ ] **src/transformers/models/swinv2/modeling_swinv2.py:495** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinSelfOutput with Swin->Swinv2
+- [ ] **src/transformers/models/swinv2/modeling_swinv2.py:535** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinIntermediate with Swin->Swinv2
+- [ ] **src/transformers/models/swinv2/modeling_swinv2.py:551** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinOutput with Swin->Swinv2
+- [ ] **src/transformers/models/swinv2/modeling_swinv2.py:890** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinModel with SWIN->SWINV2,Swin->Swinv2
+- [ ] **src/transformers/models/swinv2/modeling_swinv2.py:987** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinForMaskedImageModeling with swin->swinv2, base-simmim-window6-192->tiny-patch4-window8-256,SWIN->SWINV2,Swin->Swinv2,192->256
+- [ ] **src/transformers/models/swinv2/modeling_swinv2.py:1106** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.swin.modeling_swin.SwinForImageClassification with SWIN->SWINV2,Swin->Swinv2,swin->swinv2
+- [ ] **src/transformers/models/t5gemma/modeling_t5gemma.py:562** - # TODO: support initialization for encoders and decoders separately(?)
+- [ ] **src/transformers/models/t5gemma/modular_t5gemma.py:412** - # TODO: support initialization for encoders and decoders separately(?)
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:187** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrConvEncoder with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:240** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrConvModel with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:262** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrSinePositionEmbedding with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:300** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrLearnedPositionEmbedding with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:324** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.build_position_encoding with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:328** - # TODO find a better way of exposing other arguments
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:338** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrAttention with DETR->TABLE_TRANSFORMER,Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:473** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrEncoderLayer.__init__ with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:546** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrDecoderLayer.__init__ with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:793** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrDecoder with DETR->TABLE_TRANSFORMER,Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:968** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrModel.__init__ with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:1137** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrForObjectDetection.__init__ with Detr->TableTransformer
+- [ ] **src/transformers/models/table_transformer/modeling_table_transformer.py:1266** - # TODO: use modular - Copied from transformers.models.detr.modeling_detr.DetrMLPPredictionHead with Detr->TableTransformer,detr->table_transformer
+- [ ] **src/transformers/models/time_series_transformer/modeling_time_series_transformer.py:351** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/time_series_transformer/modeling_time_series_transformer.py:562** - # TODO: tests would need a rewrite to check for correct implementation
+- [ ] **src/transformers/models/unispeech/convert_unispeech_original_pytorch_checkpoint_to_pytorch.py:136** - # TODO: don't match quantizer.weight_proj
+- [ ] **src/transformers/models/unispeech/modeling_unispeech.py:337** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/unispeech/modeling_unispeech.py:1076** - # TODO(PVP) - add negative sampling & loss computation
+- [ ] **src/transformers/models/unispeech/modular_unispeech.py:383** - # TODO(PVP) - add negative sampling & loss computation
+- [ ] **src/transformers/models/unispeech_sat/convert_unispeech_sat_original_pytorch_checkpoint_to_pytorch.py:126** - # TODO: don't match quantizer.weight_proj
+- [ ] **src/transformers/models/unispeech_sat/modeling_unispeech_sat.py:343** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/unispeech_sat/modeling_unispeech_sat.py:1067** - # TODO(PVP) - add pretraining logic and add to tests
+- [ ] **src/transformers/models/unispeech_sat/modular_unispeech_sat.py:380** - # TODO(PVP) - add pretraining logic and add to tests
+- [ ] **src/transformers/models/vibevoice_acoustic_tokenizer/modeling_vibevoice_acoustic_tokenizer.py:180** - # TODO: @eustlb, @ebezzam this should be latter factorized with other causalconv1d (e.g. VoxtralRealtimeCausalConv1d)
+- [ ] **src/transformers/models/vibevoice_acoustic_tokenizer/modular_vibevoice_acoustic_tokenizer.py:102** - # TODO: @eustlb, @ebezzam this should be latter factorized with other causalconv1d (e.g. VoxtralRealtimeCausalConv1d)
+- [ ] **src/transformers/models/vibevoice_asr/modeling_vibevoice_asr.py:160** - # TODO: @eustlb, @ebezzam this should be latter factorized with other causalconv1d (e.g. VoxtralRealtimeCausalConv1d)
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:83** - # TODO: make it with torch instead of numpy
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:231** - # TODO: siglip attention 1-1
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:260** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->VideoMAE
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:278** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->VideoMAE
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:295** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP ViT->VideoMAE
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:311** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP ViT->VideoMAE
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:325** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTLayer with ViT->VideoMAE,VIT->VIDEOMAE
+- [ ] **src/transformers/models/videomae/modeling_videomae.py:360** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTEncoder with ViT->VideoMAE
+- [ ] **src/transformers/models/vilt/modeling_vilt.py:354** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->Vilt
+- [ ] **src/transformers/models/vilt/modeling_vilt.py:387** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViT->Vilt
+- [ ] **src/transformers/models/vilt/modeling_vilt.py:403** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViT->Vilt
+- [ ] **src/transformers/models/vision_text_dual_encoder/modeling_vision_text_dual_encoder.py:377** - # TODO: Should we use the pre-trained projection as well ?
+- [ ] **src/transformers/models/vitpose_backbone/modeling_vitpose_backbone.py:128** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->VitPoseBackbone
+- [ ] **src/transformers/models/vitpose_backbone/modeling_vitpose_backbone.py:184** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->VitPoseBackbone
+- [ ] **src/transformers/models/vitpose_backbone/modeling_vitpose_backbone.py:202** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->VitPoseBackbone
+- [ ] **src/transformers/models/voxtral/configuration_voxtral.py:66** - # TODO: @eustlb, we do not use dropout and layerdrop, yet we need to hardcode them
+- [ ] **src/transformers/models/voxtral/convert_voxtral_weights_to_hf.py:205** - # TODO: @eustlb, we are here creating on GPU
+- [ ] **src/transformers/models/voxtral/modular_voxtral.py:59** - # TODO: @eustlb, I would really prefer to use WhisperEncoder but it's messing with modular
+- [ ] **src/transformers/models/voxtral/processing_voxtral.py:253** - # TODO: @eustlb, this should be moved to mistral_common + testing
+- [ ] **src/transformers/models/voxtral_realtime/modeling_voxtral_realtime.py:495** - # TODO: @eustlb, this should be enabled soon
+- [ ] **src/transformers/models/voxtral_realtime/modular_voxtral_realtime.py:275** - # TODO: @eustlb, this should be enabled soon
+- [ ] **src/transformers/models/wav2vec2/convert_wav2vec2_original_pytorch_checkpoint_to_pytorch.py:191** - # TODO: don't match quantizer.weight_proj
+- [ ] **src/transformers/models/wav2vec2/modeling_wav2vec2.py:509** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/wav2vec2_conformer/convert_wav2vec2_conformer_original_pytorch_checkpoint_to_pytorch.py:153** - # TODO: don't match quantizer.weight_proj
+- [ ] **src/transformers/models/wavlm/convert_wavlm_original_pytorch_checkpoint_to_pytorch.py:125** - # TODO: don't match quantizer.weight_proj
+- [ ] **src/transformers/models/whisper/modeling_whisper.py:292** - # TODO: we need a refactor so that the different attention modules can get their specific kwargs
+- [ ] **src/transformers/models/whisper/tokenization_whisper.py:1010** - # TODO Handle when language is different from the previous
+- [ ] **src/transformers/models/x_clip/modular_x_clip.py:273** - # TODO: fix typos across all models and add in conversion mapping
+- [ ] **src/transformers/models/xlm/tokenization_xlm.py:413** - # TODO: make sure we are using `FacebookAI/xlm-mlm-enro-1024`, since XLM-100 doesn't have this step
+- [ ] **src/transformers/models/xlnet/modeling_xlnet.py:1283** - # TODO: Ignoring use_cache should not happen, fixme.
+- [ ] **src/transformers/models/yolos/modeling_yolos.py:249** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->Yolos
+- [ ] **src/transformers/models/yolos/modeling_yolos.py:305** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->Yolos
+- [ ] **src/transformers/models/yolos/modeling_yolos.py:323** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->Yolos
+- [ ] **src/transformers/models/yolos/modeling_yolos.py:340** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViT->Yolos
+- [ ] **src/transformers/models/yolos/modeling_yolos.py:356** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTMLP with ViT->Yolos
+- [ ] **src/transformers/models/yolos/modeling_yolos.py:370** - # Todo - Refactor as part of vision refactor. Copied from transformers.models.vit.modeling_vit.ViTLayer with ViT->Yolos,VIT->YOLOS
+- [ ] **src/transformers/models/zoedepth/image_processing_pil_zoedepth.py:170** - # TODO support align_corners=True in image_transforms.resize
+
+## License
+
+The source licenses are retained at the repository root.
